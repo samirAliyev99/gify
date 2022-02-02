@@ -1,0 +1,15 @@
+.searched > div{
+    display: inline;
+    margin: 7px;
+    border: 1px solid dodgerblue;
+    background-color: khaki;
+    cursor: pointer;
+    color: lightcoral;
+}
+.searched{
+  overflow-wrap: break-word;
+    background-color: lightyellow;
+}
+.searching{
+background-color: lightseagreen;
+}
