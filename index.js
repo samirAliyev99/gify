@@ -8,14 +8,17 @@ $('.searched').click(function (e) {
 $("#button").on("click",function(){
 
     call($("#wanted").val());
-    
+    let div=document.createElement('div');
+    div.innerHTML=$("#wanted").val();
+    $( div ).addClass( $("#wanted").val() );
+    $('.searched').append(div); 
 });
 
 
 function call(searching){
     $('#din').empty();
 
-        var wanted=searching;
+        let wanted=searching;
         const settings = {
             "async": true,
             "url":'https://api.giphy.com/v1/gifs/search?api_key=aNxIlBjjShcnAEr0bD5ITpDXPrAAIntN&q='+wanted+'&limit=1&offset=0&rating=g&lang=en',
@@ -26,12 +29,8 @@ function call(searching){
             let img=document.createElement('img');
             img.src=response.data[0].images.downsized.url;
             $('#din').append(img);
-        
-                let div=document.createElement('div');
-                div.innerHTML=wanted;
-                $( div ).addClass( wanted );
-                $('.searched').append(div);
-            
+       
+              
 });
 
 }
